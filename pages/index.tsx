@@ -19,19 +19,12 @@ const Home: NextPage = () => {
       <Canvas>
         <OrbitControls makeDefault autoRotate />
         <Suspense fallback={null}>
-          {/* <ambientLight intensity={0.1} />
-          <directionalLight position={[0, 0, 5]} /> */}
           <Stage preset="rembrandt">
             <BoxMesh />
             <SphereMesh position={[2, 0, 0]} />
           </Stage>
         </Suspense>
       </Canvas>
-      {/* <Canvas>
-        <ambientLight intensity={0.1} />
-        <directionalLight color="red" position={[0, 0, 5]} />
-        <Sphere />
-      </Canvas> */}
     </div>
   );
 };

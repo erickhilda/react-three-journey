@@ -1,20 +1,31 @@
 import * as THREE from "three";
-import React from "react";
-import { useTexture, Box } from "@react-three/drei";
-import { useControls } from "leva";
+import React, { useRef } from "react";
+import { useLoader } from "@react-three/fiber";
+import { TextureLoader } from "three/src/loaders/TextureLoader";
 
 function BoxMesh(props: JSX.IntrinsicElements["mesh"]) {
-  const textures = useTexture({
-    map: "/textures/door/color.jpg",
-    normalMap: "/textures/door/normal.jpg",
-    roughnessMap: "/textures/door/roughness.jpg",
-    aoMap: "/textures/door/ambientOcclusion.jpg",
-    metalnessMap: "/textures/door/metalness.jpg",
-  });
+  const mesh = useRef<THREE.Mesh>(null!);
+  const [colorMap, normalMap, roughnessMap, aoMap, metalnessMap] = useLoader(
+    TextureLoader,
+    [
+      "/textures/door/color.jpg",
+      "/textures/door/normal.jpg",
+      "/textures/door/roughness.jpg",
+      "/textures/door/ambientOcclusion.jpg",
+      "/textures/door/metalness.jpg",
+    ]
+  );
   return (
-    <Box args={[1, 1, 1]} {...props}>
-      <meshPhysicalMaterial {...textures} map-magFilter={THREE.NearestFilter} />
-    </Box>
+    <mesh {...props} ref={mesh}>
+      <boxGeometry args={[1, 1, 1]} />
+      <meshStandardMaterial
+        map={colorMap}
+        normalMap={normalMap}
+        roughnessMap={roughnessMap}
+        aoMap={aoMap}
+        metalnessMap={metalnessMap}
+      />
+    </mesh>
   );
 }
 
