@@ -1,14 +1,13 @@
-import * as THREE from "three";
 import React, { useRef, useMemo, useLayoutEffect } from "react";
 import { useLoader, extend } from "@react-three/fiber";
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader.js";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry.js";
 import { TextureLoader } from "three/src/loaders/TextureLoader";
 
-function TextMesh(props: JSX.IntrinsicElements["mesh"]) {
+function TextMesh(props) {
   extend({ TextGeometry });
 
-  const mesh = useRef<THREE.Mesh>(null!);
+  const mesh = useRef(null);
 
   const [matcap] = useLoader(TextureLoader, ["/textures/matcaps/1.png"]);
 
@@ -18,7 +17,7 @@ function TextMesh(props: JSX.IntrinsicElements["mesh"]) {
 
   useLayoutEffect(() => void mesh.current.geometry.center(), [text]);
 
-  const meshDonut = useRef<THREE.Mesh>(null!);
+  const meshDonut = useRef(null);
 
   return (
     <>

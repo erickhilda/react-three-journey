@@ -4,7 +4,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stage } from "@react-three/drei";
-import BoxMesh from "../components/BoxMesh";
+import TextMesh from "../components/TextMesh";
 
 const Home: NextPage = () => {
   return (
@@ -20,7 +20,7 @@ const Home: NextPage = () => {
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} color="green" />
         <Suspense fallback={null}>
-          <BoxMesh />
+          <TextMesh />
         </Suspense>
       </Canvas>
     </div>
