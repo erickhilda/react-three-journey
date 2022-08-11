@@ -15,7 +15,7 @@ function TextMesh(props) {
   const font = useLoader(FontLoader, "/fonts/helvetiker_regular.typeface.json");
   const config = useMemo(() => ({ font, size: 2, height: 1 }), [font]);
 
-  useLayoutEffect(() => void mesh.current.geometry.center(), [text]);
+  useLayoutEffect(() => void mesh.current?.geometry?.center(), [text]);
 
   const meshDonut = useRef(null);
 
