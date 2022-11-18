@@ -15,14 +15,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Canvas>
-        <OrbitControls makeDefault autoRotate />
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} color="green" />
-        <Suspense fallback={null}>
-          <TextMesh />
-        </Suspense>
-      </Canvas>
+      <div>
+        <h3 className="text-3xl font-bold underline">Hello world!</h3>
+      </div>
     </div>
   );
 };
