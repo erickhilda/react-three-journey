@@ -13,6 +13,8 @@ const pageMenus = [
     menus: [
       { path: "/geometries", textMenu: "Geometries" },
       { path: "/text", textMenu: "Text" },
+      { path: "/texture", textMenu: "Texture" },
+      { path: "/materials", textMenu: "Materials" },
     ],
   },
 

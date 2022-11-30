@@ -3,38 +3,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useControls } from "leva";
-import { DoubleSide, Mesh } from "three";
-
-function Octagon() {
-  const { radius, detail } = useControls({
-    radius: 1,
-    detail: 1,
-  });
-
-  const materialsProps = useControls({
-    wireframe: false,
-  });
-
-  const octaRef = useRef<Mesh>(null!);
-
-  useFrame((state, delta) => {
-    octaRef.current.rotation.x += 0.02;
-    octaRef.current.rotation.y += 0.01;
-  });
-
-  return (
-    <mesh ref={octaRef}>
-      <octahedronGeometry args={[radius, detail]} />
-      <meshPhongMaterial
-        color={0x156289}
-        flatShading
-        emissive={0x072534}
-        side={DoubleSide}
-        {...materialsProps}
-      />
-    </mesh>
-  );
-}
+import OctagonMesh from "../components/OctagonMesh";
 
 const Geometries: NextPage = () => {
   const { lightIntensity } = useControls({
@@ -71,7 +40,7 @@ const Geometries: NextPage = () => {
         />
 
         <Suspense fallback={null}>
-          <Octagon />
+          <OctagonMesh />
         </Suspense>
       </Canvas>
     </div>
