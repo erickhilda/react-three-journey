@@ -22,7 +22,6 @@ function CoastPlane(props: JSX.IntrinsicElements["mesh"]) {
       options: [
         "coast_and_rocks",
         "aerial_rocks",
-        "weathered_planks",
         "floor_tiles",
       ],
     },
