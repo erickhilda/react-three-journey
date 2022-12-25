@@ -23,6 +23,9 @@ const pageMenus = [
     menus: [
       { path: "/light", textMenu: "Light" },
       { path: "/shadows", textMenu: "Shadows" },
+      { path: "/model", textMenu: "Model" },
+      { path: "/haunted-house", textMenu: "Putting all together" },
+      { path: "/saturn", textMenu: "Saturn" },
     ],
   },
 ];
