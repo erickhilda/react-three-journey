@@ -4,7 +4,7 @@ import { useControls } from "leva";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { Suspense, useLayoutEffect, useRef } from "react";
-import { Mesh, PointLight, RepeatWrapping, RepeatWrappings } from "three";
+import { Mesh, PointLight, RepeatWrapping } from "three";
 
 function Floor() {
   const mesh = useRef<Mesh>(null!);
@@ -21,7 +21,7 @@ function Floor() {
 
   useLayoutEffect(() => {
     Object.values(planeTexture).forEach((texture) => {
-      texture.wrapS = RepeatWrappings;
+      texture.wrapS = RepeatWrapping;
       texture.wrapT = RepeatWrapping;
       texture.repeat.set(4, 4);
     });
@@ -215,7 +215,7 @@ const HauntedHouse: NextPage = () => {
             distance={7}
             position={[-0.3, 2.2, 2.9]}
             castShadow
-            color="#ba5b32"
+            color="#ff9f76"
           />
           <Ghosts />
 
