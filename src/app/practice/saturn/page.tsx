@@ -3,7 +3,6 @@
 import { OrbitControls, useTexture } from '@react-three/drei';
 import { Canvas, useLoader } from '@react-three/fiber';
 import { NextPage } from 'next';
-import Head from 'next/head';
 import { Suspense, useMemo, useRef } from 'react';
 import { DoubleSide, Mesh, TextureLoader } from 'three';
 import vertexShader from '@/utils/ring-shader/vertexShader';
