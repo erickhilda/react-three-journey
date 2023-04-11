@@ -31,8 +31,10 @@ const pageMenus = [
     menus: [
       { path: '/practice/haunted-house', textMenu: 'Haunted house' },
       { path: '/practice/light', textMenu: 'Duo light performance' },
-      { path: '/practice/saturn', textMenu: 'Saturn' },
+      { path: '/practice/solar-system', textMenu: 'Solar system' },
       { path: '/practice/stencil', textMenu: 'Stencil' },
+      { path: '/practice/portal', textMenu: 'Portal' },
+      { path: '/practice/marble-race', textMenu: 'Marble race' },
     ],
   },
 ];

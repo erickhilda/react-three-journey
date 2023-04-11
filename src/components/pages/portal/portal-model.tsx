@@ -3,8 +3,8 @@ import { AnimationClip, Color, Mesh, ShaderMaterial } from 'three';
 import { Center, Sparkles, useGLTF, useTexture } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { GLTF } from 'three-stdlib';
-import vertexShader from '@/utils/portal/vertexShader';
-import fragmentShader from '@/utils/portal/fragmentShader';
+import vertexShader from './shaders/vertexShader';
+import fragmentShader from './shaders/fragmentShader';
 
 type GLTFResults = GLTF & {
   nodes: {
